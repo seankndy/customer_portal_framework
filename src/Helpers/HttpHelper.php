@@ -212,6 +212,10 @@ class HttpHelper
                 $messageArray = [];
                 foreach ($message as $key => $value)
                 {
+                    if (is_array($value)) {
+                        $value = implode(', ', $value);
+                    }
+
                     array_push($messageArray,$value);
                 }
                 return implode(", ",$messageArray);
